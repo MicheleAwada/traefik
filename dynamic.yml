@@ -1,0 +1,17 @@
+http:
+  middlewares:
+    to-https:
+      redirectScheme:
+        permanent: true
+        scheme: https
+        port: 443
+    no-www:
+      redirectRegex:
+        regex: "^https?://www\\.(.+)"
+        replacement: "https://${1}"
+        permanent: true
+    no-www-http:
+      redirectRegex:
+        regex: "^http?://www\\.(.+)"
+        replacement: "http://${1}"
+        permanent: true
