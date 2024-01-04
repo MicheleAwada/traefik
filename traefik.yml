@@ -6,6 +6,7 @@ entryPoints:
     http:
       middlewares:
         - gzip-compress@file
+        - data-expiry@file
 
 api:
   dashboard: false
