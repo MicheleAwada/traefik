@@ -1,0 +1,27 @@
+entryPoints:
+  web:
+    address: ":80"
+  web-secure:
+    address: ":443"
+    http:
+      middlewares:
+        - gzip-compress@file
+
+api:
+  dashboard: false
+  insecure: false
+
+providers:
+  file:
+    filename: /etc/traefik/dynamic.yml
+  docker:
+    exposedByDefault: false
+    network: traefikproxy
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: an_email@email.com
+      storage: acme.json
+      httpChallenge:
+        entryPoint: web
