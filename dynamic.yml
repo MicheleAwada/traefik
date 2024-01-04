@@ -13,4 +13,5 @@ http:
     gzip-compress:
       compress: {}
     data-expiry:
-      stsSeconds: 2,629,440
+      headers:
+        stsSeconds: 2,629,440
