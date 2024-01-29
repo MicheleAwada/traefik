@@ -10,5 +10,10 @@ http:
         regex: "^https?://www\\.(.+)"
         replacement: "https://${1}"
         permanent: true
+    no-com:
+      redirectRegex:
+        regex: "^https?://([^/]+)\\.com(/.*)?$"
+        replacement: "https://${1}.org${2}"
+        permanent: true
     gzip-compress:
       compress: {}
