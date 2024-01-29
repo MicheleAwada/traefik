@@ -17,3 +17,8 @@ http:
         permanent: true
     gzip-compress:
       compress: {}
+    yes-www:
+      redirectRegex:
+        regex: "^https?://([^/]+\\.com)(/.*)?$"
+        replacement: "https://www.${1}${2}"
+        permanent: true
