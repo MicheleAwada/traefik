@@ -12,6 +12,3 @@ http:
         permanent: true
     gzip-compress:
       compress: {}
-    data-expiry:
-      headers:
-        stsSeconds: 2,629,440
