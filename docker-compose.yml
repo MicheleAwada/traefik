@@ -16,5 +16,4 @@ services:
 
 networks:
   traefikproxy:
-    external: true
     name: traefikproxy
