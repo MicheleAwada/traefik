@@ -6,6 +6,8 @@ entryPoints:
     http:
       middlewares:
         - gzip-compress@file
+      tls:
+        {}
 
 
 api:
@@ -20,12 +22,12 @@ providers:
     network: traefikproxy
 
 certificatesResolvers:
-  letsencrypt:
+  myresolver:
     acme:
       storage: acme.json
       httpChallenge:
         entryPoint: web
 
-tls:
-  certificatesResolvers:
-    default: letsencrypt
+tcpServersTransport:
+  tls:
+    certResolver: myresolver
