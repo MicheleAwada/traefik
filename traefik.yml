@@ -7,7 +7,7 @@ entryPoints:
       middlewares:
         - gzip-compress@file
       tls:
-        {}
+        certResolver: myresolver
 
 
 api:
@@ -27,7 +27,3 @@ certificatesResolvers:
       storage: acme.json
       httpChallenge:
         entryPoint: web
-
-tcpServersTransport:
-  tls:
-    certResolver: myresolver
